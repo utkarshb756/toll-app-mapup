@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+
+import ParentComponent from './components/ParentComponent';
 import './App.css';
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
+  const [waypoints, setWaypoints] = React.useState([]);
+
+  // eslint-disable-next-line no-unused-vars
+  const handleFormSubmit = (formData) => {
+    setWaypoints(formData.waypoints);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+      <ParentComponent waypoints={waypoints} />
     </div>
   );
 }
